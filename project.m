@@ -37,13 +37,12 @@ Operational_pixel_set = get_sub_pixel_set(Salinas_Image, Operational_Set_Labels)
 mkdir("./figures");
 
 % εκπαίδευση - δημιουργία ταξινομητών
-figure(1), title("Train Set"), imagesc(Training_Set_Labels);
-print("./figures/fg_1.png", "-dpng"); 
+figure(1), imagesc(Training_Set_Labels), title("Train Set"),;
+print("./figures/train_set.png", "-dpng"); 
 
 
-%k = estimate_k_parameter(Train_array, Train_array_response, 17); %!!!!!! ΑΠΟΣΧΟΛΙΑΣΕ ΑΥΤΗ ΤΗΝ ΓΡΑΜΜΗ ΠΡΙΝ ΤΟ ΠΑΡΑΔΩΣΕΙΣ!!!!!!
-%knnc = knn_classifier(Train_array, Train_array_response, k)%;
-knnc = knn_classifier(Train_array, Train_array_response, 1)%;
+k = estimate_k_parameter(Train_array, Train_array_response, 17);
+knnc = knn_classifier(Train_array, Train_array_response, k)%;
 ec = euclidean_classifier(Train_array, Train_array_response)%;
 nbc = naive_bayes_classifier(Train_array, Train_array_response)%;
 
@@ -53,8 +52,8 @@ nbc = naive_bayes_classifier(Train_array, Train_array_response)%;
 
 printf("\nTest Set:\n");
 
-figure(2), title("Test Set"), imagesc(Test_Set_Labels);
-print("./figures/fg_2_1.png", "-dpng");
+figure(2), imagesc(Test_Set_Labels), title("Test Set");
+print("./figures/test_set.png", "-dpng");
 
 knnc_test_labels = classify(knnc, Test_array);
 ec_test_labels = classify(ec, Test_array);
@@ -62,16 +61,16 @@ nbc_test_labels = classify(nbc, Test_array);
 
 
 [knnc_Test_Set_Labels, _] = arrays2images(Test_array, knnc_test_labels, Test_array_pos, p, n);
-figure(3), title("k-Nearest Neighbors Classifier: Test Set"), imagesc(knnc_Test_Set_Labels);
-print("./figures/fg_2_2.png", "-dpng");
+figure(3), imagesc(knnc_Test_Set_Labels), title("k-Nearest Neighbors Classifier: Test Set");
+print("./figures/k-nn_test_set.png", "-dpng");
 
 [ec_Test_Set_Labels, _] = arrays2images(Test_array, ec_test_labels, Test_array_pos, p, n);
-figure(4), title("Euclidean Classifier: Test Set"), imagesc(ec_Test_Set_Labels);
-print("./figures/fg_2_3.png", "-dpng");
+figure(4), imagesc(ec_Test_Set_Labels), title("Euclidean Classifier: Test Set");
+print("./figures/euclidean_test_set.png", "-dpng");
 
 [nbc_Test_Set_Labels, _] = arrays2images(Test_array, nbc_test_labels, Test_array_pos, p, n);
-figure(5), title("Naive Bayes Classifier: Test Set"), imagesc(nbc_Test_Set_Labels);
-print("./figures/fg_2_4.png", "-dpng");
+figure(5), imagesc(nbc_Test_Set_Labels), title("Naive Bayes Classifier: Test Set");
+print("./figures/naive_bayes_test_set.png", "-dpng");
 
 knnc_test_cm = calculate_confusion_matrix(knnc_test_labels, n_classes(knnc), Test_array_response)%;
 ec_test_cm = calculate_confusion_matrix(ec_test_labels, n_classes(ec), Test_array_response)%;
@@ -83,8 +82,8 @@ nbc_test_p = calculate_performance_from_cm(nbc_test_cm)%;
 
 printf("\nOperational Set:\n");
 
-figure(6), title("Operational Set"), imagesc(Test_Set_Labels);
-print("./figures/fg_3_1.png", "-dpng");
+figure(6), imagesc(Test_Set_Labels), title("Operational Set");
+print("./figures/operational_set.png", "-dpng");
 
 knnc_op_labels = classify(knnc, Operational_array);
 ec_op_labels = classify(ec, Operational_array);
@@ -92,16 +91,16 @@ nbc_op_labels = classify(nbc, Operational_array);
 
 
 [knnc_Operational_Set_Labels, _] = arrays2images(Operational_array, knnc_op_labels, Operational_array_pos, p, n);
-figure(7), title("k-Nearest Neighbors Classifier: Operational Set"), imagesc(knnc_Operational_Set_Labels);
-print("./figures/fg_3_2.png", "-dpng");
+figure(7), imagesc(knnc_Operational_Set_Labels), title("k-Nearest Neighbors Classifier: Operational Set");
+print("./figures/k-nn_operational_set.png", "-dpng");
 
 [ec_Operational_Set_Labels, _] = arrays2images(Operational_array, ec_op_labels, Operational_array_pos, p, n);
-figure(8), title("Euclidean Classifier: Operational Set"), imagesc(ec_Operational_Set_Labels);
-print("./figures/fg_3_3.png", "-dpng");
+figure(8), imagesc(ec_Operational_Set_Labels), title("Euclidean Classifier: Operational Set");
+print("./figures/euclidean_operatonal_set.png", "-dpng");
 
 [nbc_Operational_Set_Labels, _] = arrays2images(Operational_array, nbc_op_labels, Operational_array_pos, p, n);
-figure(9), title("Naive Bayes Classifier: Operational Set"), imagesc(nbc_Operational_Set_Labels);
-print("./figures/fg_3_4.png", "-dpng");
+figure(9), imagesc(nbc_Operational_Set_Labels), title("Naive Bayes Classifier: Operational Set");
+print("./figures/naive_bayes_operational_set.png", "-dpng");
 
 knnc_op_cm = calculate_confusion_matrix(knnc_op_labels, n_classes(knnc), Operational_array_response)%;
 ec_op_cm = calculate_confusion_matrix(ec_op_labels, n_classes(ec), Operational_array_response)%;
@@ -110,22 +109,3 @@ nbc_op_cm = calculate_confusion_matrix(nbc_op_labels, n_classes(nbc), Operationa
 knnc_op_p = calculate_performance_from_cm(knnc_op_cm)%;
 ec_op_p = calculate_performance_from_cm(ec_op_cm)%;
 nbc_op_p = calculate_performance_from_cm(nbc_op_cm)%;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
