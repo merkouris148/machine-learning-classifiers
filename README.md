@@ -8,7 +8,7 @@ In this project we classify pixels of a [hyperspectral image](https://en.wikiped
 1. Salinas_hyperspectral.mat
 2. classification_labels.mat
 
-For same pixels the label is uknown (encoded with the label ```0```). In this project we only consider the pixels of **known labels**. The given hyperspectral image is of size 150x150, where every pixel is a 204-dimentional vector. The given data set is divided in three sets:
+For same pixels the label is unknown (encoded with the label ```0```). In this project we only consider the pixels of **known labels**. The given hyperspectral image is of size 150x150, where every pixel is a 204-dimentional vector. The given data set is divided in three sets:
 
 1. Training set
 2. Test set
