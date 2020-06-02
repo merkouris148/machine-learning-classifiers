@@ -3,7 +3,7 @@ An implementation of k-nearest neighbours, Euclidean and naive Bayes classifiers
 
 ## Input Data
 
-In this project we classify pixels of a hyperspectral image, there are 5 classes given. The given data are located in the files:
+In this project we classify pixels of a [hyperspectral image](https://en.wikipedia.org/wiki/Hyperspectral_imaging), there are 5 classes given. The given data are located in the files:
 
 1. Salinas_hyperspectral.mat
 2. classification_labels.mat
