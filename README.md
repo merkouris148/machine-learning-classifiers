@@ -26,6 +26,8 @@ To classify the unknown pixels, we use the following three methods:
 
 In **k-Nearest Neighbours classification** we use the [cross validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) method to estimate the parameter k. k may range between 1 and 17. The best k is estimated by the programme. In **Minimal Euclidean Distance classification** we estimate the medians of the given classes, assuming the data follow the [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution). In **Naive Bayes classification** we estimate the median and the variance of the given classes. Again, we assume the data to follow the normal distribution.
 
+All the classifiers are implemented in Matlab-classes, located in the folders starting with ```@```.
+
 ## Output
 
 At the end of the classification the confusion matrices are printed for every classifier. Also the classification is visualized in the images that are created throughout the programme's execution. The programme creates a folder ```figures``` where all the figures are saved.
