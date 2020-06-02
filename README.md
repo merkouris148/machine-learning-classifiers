@@ -34,5 +34,5 @@ At the end of the classification the confusion matrices are printed for every cl
 
 ## Notes
 * For clarity, in this project we use **column vectors**. Often, we will encode list of vectors as **matlab-matrices** of size 204xn (see Input Data above).
-* This code has been tested in [Octave](https://www.gnu.org/software/octave/) versions 4.2.2 and 5.2.0. You can run the code using the command ```octave ./project```. This code hasn't been tested in Matlab, although Octave and Matlab are generally compatible.
+* This code has been tested in [Octave](https://www.gnu.org/software/octave/) versions 4.2.2 and 5.2.0. You can run the code using the command ```octave ./project```. For **Matlab compatability** use insted of ```project.m```, the file ```project_m_file.m```.
 * There is a detailed description of this assignment in the file ``` 	Project - Αναγνώριση Προτύπων 2017-2018.pdf``` (in Greek). Also, some conclusions of the statistical properties of the data set and the evaluation of the classifiers are presented in the file ```αναφορά.pdf``` (in Greek).
