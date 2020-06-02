@@ -30,7 +30,7 @@ All the classifiers are implemented in Matlab-classes, located in the folders st
 
 ## Output
 
-At the end of the classification the confusion matrices are printed for every classifier. Also the classification is visualized in the images that are created throughout the programme's execution. The programme creates a folder ```figures``` where all the figures are saved.
+At the end of the classification the [confusion matrices](https://en.wikipedia.org/wiki/Confusion_matrix) are printed for every classifier. Also the classification is visualized in the images that are created throughout the programme's execution. The programme creates a folder ```figures``` where all the figures are saved.
 
 ## Notes
 * For clarity, in this project we use **column vectors**. Often, we will encode list of vectors as **matlab-matrices** of size 204xn (see Input Data above).
